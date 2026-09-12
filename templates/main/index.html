@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<h1>welcome to blog application</h1>
+<h5>Top 10 Articles </h5>
+<ul>
+    {% for article in latest_articals %}
+    <li>
+        <a href="{% url 'get_article' article.pk %}">{{ article }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
